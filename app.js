@@ -1,4 +1,5 @@
 let pluto = document.getElementById('pluto');
+let plutoDesc = document.getElementById('pluto__text');
 let darkDesertRight = document.getElementById('right__desert');
 let darkDesertLeft = document.getElementById('left__desert');
 let mainText = document.getElementById('main__text');
@@ -13,12 +14,16 @@ window.addEventListener('scroll', function () {
     if (scrollValue > offsetPlutoVal) {
         pluto.style.left = 5 * (startVal) + 'px';
         pluto.style.marginTop = (startVal * 0.16) ** 2 - 5 * startVal + 'px';
-
+        plutoDesc.style.left = 5.8 * (startVal) + 'px';
+        plutoDesc.style.marginTop = (startVal * 0.172) ** 2 - 5 * startVal + 'px';
     }
+    // this moves the elements out of sight when scrolling back up
     if (scrollValue < 250) {
         // pluto.style = "none";
         pluto.style.marginTop = - 2 * startVal + 'px';
         pluto.style.left = 2 * this.startVal + 'px';
+        plutoDesc.style.marginTop = - 2 * startVal + 'px';
+        plutoDesc.style.left = 2 * this.startVal + 'px';
     }
 
     if (scrollValue > 450) {
