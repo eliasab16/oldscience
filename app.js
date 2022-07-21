@@ -31,9 +31,9 @@ window.addEventListener('scroll', function () {
         mountainSide.style.left = -1 * (scrollValue - 450) + 'px'
     }
 
-    if (scrollValue > 500) {
-        darkDesertRight.style.left = 4 * (scrollValue - 500) + 'px';
-        darkDesertLeft.style.right = 4 * (scrollValue - 500) + 'px';
+    if (scrollValue > 600) {
+        darkDesertRight.style.left = 3.8 * (scrollValue - 600) + 'px';
+        darkDesertLeft.style.right = 3.8 * (scrollValue - 600) + 'px';
     }
     mainText.style.top = 0.32 * scrollValue + 'vh';
     // pluto.style.top = scrollValue * -1.5 + 'px';
