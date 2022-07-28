@@ -7,7 +7,6 @@ let mountainSide = document.getElementById('mountain__side');
 
 window.addEventListener('scroll', function () {
     let scrollValue = window.scrollY;
-    console.log(scrollValue);
     offsetPlutoVal = 250;
     startVal = scrollValue - offsetPlutoVal;
 
@@ -31,10 +30,58 @@ window.addEventListener('scroll', function () {
         mountainSide.style.left = -1 * (scrollValue - 450) + 'px'
     }
 
-    if (scrollValue > 600) {
-        darkDesertRight.style.left = 3.8 * (scrollValue - 600) + 'px';
-        darkDesertLeft.style.right = 3.8 * (scrollValue - 600) + 'px';
+    if (scrollValue > 550) {
+        darkDesertRight.style.left = 3.8 * (scrollValue - 550) + 'px';
+        darkDesertLeft.style.left = 3.8 * (scrollValue - 550) + 'px';
     }
     mainText.style.top = 0.32 * scrollValue + 'vh';
     // pluto.style.top = scrollValue * -1.5 + 'px';
 })
+
+var activeSubjects = {
+    "zoology-book": false,
+    "physics-book": false,
+    "geo-book": false,
+    "evolution-book": false,
+    "space-book": false
+}
+
+var activePeriods = {
+    "c65": false,
+    "c70": false,
+    "c75": false,
+    "c80": false,
+    "c90": false,
+    "c95": false,
+    "c00": false,
+    "c05": false,
+    "c10": false
+}
+
+// activate periods
+var yearbooks = document.getElementsByClassName("book__clr--img");
+for (var i = 0; i < yearbooks.length; i++) {
+    yearbooks[i].addEventListener("click", function () {
+        if (this.classList.contains("active")) {
+            this.className = this.className.replace(" active", "");
+            activePeriods[this.id] = false;
+        } else {
+            this.className += " active";
+            activePeriods[this.id] = true;
+        }
+    });
+}
+
+// activate subjects
+var subjectbooks = document.getElementsByClassName("subject__book");
+for (var i = 0; i < subjectbooks.length; i++) {
+    subjectbooks[i].addEventListener("click", function () {
+        if (this.classList.contains("active")) {
+            this.className = this.className.replace(" active", "");
+            activeSubjects[this.id] = false;
+        } else {
+            this.className += " active";
+            activeSubjects[this.id] = true;
+        }
+    });
+}

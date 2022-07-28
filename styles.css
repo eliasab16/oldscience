@@ -21,13 +21,21 @@ body {
     overflow-x: hidden;
 }
 
+body#enlighten__body {
+    background: #fff;
+}
+
 .navbar {
     width: 100%;
     overflow: auto;
     padding: 1.5rem;
     z-index: 1000;
     position: fixed;
-    /* box-shadow: 0 4px 9px 0 rgba(0, 0, 0, .2); */
+}
+
+.navbar#enlighten__navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.087);
 }
 
 .navbar a {
@@ -67,7 +75,7 @@ body {
     font-family: 'Koulen', cursive;
 }
 
-section {
+section#index__images--section {
     position: relative;
     height: 100vh;
     padding: 0;
@@ -187,6 +195,7 @@ section img#dark__desert {
 } */
 
 .bottom__text {
+    width: 100%;
     position: absolute;
     z-index: 900;
     padding: 100px;
@@ -195,15 +204,37 @@ section img#dark__desert {
 }
 
 .bottom__text h2 {
-    font-size: 3.5em;
+    font-size: 2em;
     margin-bottom: 10px;
     color: #fff;
 }
 
-.bottom__text p {
+.bottom__text a,
+li {
     font-size: 1em;
     color: #fff;
+    text-decoration: none;
 }
+
+/* .credits {
+    display: grid;
+    grid-template-columns: 1fr;
+} */
+
+/* .credits a#c1 {
+    grid-row: 1;
+    font-family: 'Poppins', sans-serif;
+}
+
+.credits a#c2 {
+    grid-row: 2;
+    font-family: 'Poppins', sans-serif;
+}
+
+.credits a#c3 {
+    grid-row: 3;
+    font-family: 'Poppins', sans-serif;
+} */
 
 .portal__button__container {
     position: relative;
@@ -212,8 +243,8 @@ section img#dark__desert {
 .portal__button__container a {
     position: absolute;
     z-index: 900;
-    right: 30%;
-    top: 1%;
+    right: 30vw;
+    top: 1vh;
     text-decoration: none;
     text-align: center;
     padding: 58px 8px;
@@ -227,4 +258,239 @@ section img#dark__desert {
 .portal__button__container a:hover {
     background: #058945d5;
     color: #fff;
+}
+
+.yearbooks__shelf {
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.1fr 1.5fr 0.1fr;
+    width: 100%;
+    justify-items: center;
+    margin: auto;
+}
+
+.year__books img {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.shelf__container {
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+}
+
+/* #double__shelf--img {
+    width: 80vw;
+} */
+
+#double__shelf--img {
+    width: 100%;
+}
+
+/* flat books positiioned inside div to allow for texts to be in the same container */
+.yb__div {
+    position: absolute;
+    width: 11vw;
+    display: grid;
+}
+
+/* YEARBOOKS ON SHELF */
+/* 1st shelf */
+
+.yb__div#yb1__div {
+    top: 13%;
+    left: 18%;
+}
+
+.yb__div#yb2__div {
+    top: 13%;
+    left: 31%;
+}
+
+.yb__div#yb3__div {
+    top: 13%;
+    left: 44%;
+}
+
+.yb__div#yb4__div {
+    top: 13%;
+    left: 57%;
+}
+
+.yb__div#yb5__div {
+    top: 13%;
+    left: 70%;
+}
+
+/* 2nd shelf */
+
+.yb__div#yb1__bot__div {
+    top: 56%;
+    left: 18%;
+}
+
+.yb__div#yb2__bot__div {
+    top: 56%;
+    left: 31%;
+}
+
+.yb__div#yb3__bot__div {
+    top: 56%;
+    left: 44%;
+}
+
+.yb__div#yb4__bot__div {
+    top: 56%;
+    left: 57%;
+}
+
+.yb__div#yb5__bot__div {
+    top: 56%;
+    left: 70%;
+}
+
+.year__books img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+}
+
+img.book__clr--img {
+    opacity: 0;
+}
+
+img.book__clr--img:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+img.book__clr--img.active {
+    opacity: 1;
+}
+
+.subjects__shelf {
+    object-fit: cover;
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.2fr 1.5fr 0.2fr;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.subjects__shelf img {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.colored__books img {
+    position: absolute;
+}
+
+
+#shelf-img {
+    width: 100vw;
+}
+
+/* subject books */
+
+#zoology-book {
+    top: 30.2%;
+    left: 11.7%;
+    width: 5.5%;
+}
+
+#physics-book {
+    top: 14%;
+    left: 32%;
+    width: 7.5%;
+}
+
+#evolution-book {
+    top: 19.5%;
+    left: 44.8%;
+    width: 4.2%;
+}
+
+#space-book {
+    top: 14%;
+    left: 54.5%;
+    width: 9.5%;
+}
+
+#geo-book {
+    top: 14%;
+    left: 39.2%;
+    width: 5.7%;
+}
+
+.colored__books img {
+    opacity: 0;
+}
+
+img.subject__book.active {
+    opacity: 1;
+}
+
+.colored__books img:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.main__enlighten {
+    padding: 100px 0 0 0;
+}
+
+.main__enlighten h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+    grid-column: 2;
+    grid-row: 1;
+    padding-bottom: 0;
+    padding-top: 20px;
+}
+
+.books__text {
+    display: grid;
+    grid-template-columns: 0.2fr 1.5fr 0.2fr;
+}
+
+
+.arrow__down--div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#arrow__div2 {
+    grid-template-rows: 1fr 1fr;
+}
+
+.arrow__container {
+    display: flex;
+    grid-column: 2;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+#arrow2 {
+    grid-row: 2;
+}
+
+.arrow__down {
+    width: 20%;
+}
+
+.arrow__down--div h3 {
+    display: flex;
+    grid-column: 2;
+    grid-row: 1;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding-top: auto;
 }
